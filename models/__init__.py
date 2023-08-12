@@ -1,2 +1,1 @@
-from . import sale_area
-from . import res_users
+from . import product_template
