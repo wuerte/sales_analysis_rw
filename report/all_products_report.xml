@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <template id="all_products_report_view">
+        <t t-call="web.html_container">
+            <!-- <t t-foreach="docs" t-as="o"> -->
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                        <span>All products report</span>
+                        <br/>
+                        <t t-esc="date_from">Date from:</t>
+                        <br/>
+                        <t t-esc="products"/>
+                        </h2>
+                    </div>
+                </t>
+            <!-- </t> -->
+        </t>
+    </template>   
+
+    <record id="action_all_products_report_print" model="ir.actions.report">
+        <field name="name">All porducts report</field>
+        <field name="model">all.products.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sales_analysis_rw.all_products_report_view</field>
+        <field name="report_file">sales_analysis_rw.all_products_report_view</field>
+        <field name="attachment_use">False</field>
+        <field name="binding_model_id" ref="model_all_products_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    </data>
+</odoo>

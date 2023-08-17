@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_all_products_report" model="ir.ui.view">
+        <field name="name">all.products.report.wizard.form</field>
+        <field name="model">all.products.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="All Products report">
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="action_print_report" type="object" string="Create" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_all_products_report" model="ir.actions.act_window">
+        <field name="name">All products report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">all.products.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_all_products_report"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -42,16 +42,52 @@ class AccountMove(models.Model):
     _inherit = 'product.template'
 
     
-    def get_all_products(self):
-        query = """
-            SELECT id, name
-            FROM res_partner
-            WHERE active = TRUE
-            ORDER BY name
-        """
+    # def get_all_products(self):
+    #     query = """
+    #         SELECT id, name
+    #         FROM res_partner
+    #         WHERE active = TRUE
+    #         ORDER BY name
+    #     """
         
-        cr = self.env.cr
-        cr.execute(query)
-        result = cr.fetchall()
+    #     cr = self.env.cr
+    #     cr.execute(query)
+    #     result = cr.fetchall()
         
-        return result
+    #     _logger.warning(f"@@@@@@@@@@@@@@@@@@@@@ LOGGER RW: resutl: {result} @@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    #     # return result
+    #     return "ELO"
+    
+
+class ReportAllProducts(models.AbstractModel):
+    _name = 'report.sales_analysis_rw.report_all_products'
+    _description = 'All products report'
+
+    # @api.multi
+    # def render_html(self,data=None):          
+    #     report_obj = self.env['report']
+    #     report = report_obj._get_report_from_name('product_template')
+
+    #     model_obj = self.env['product.template'].sudo().search([('id', '=', self._ids[0])])
+
+    #     docargs = {
+    #         'data': model_obj,
+    #     }
+    #     return report_obj.render('product.template', docargs)
+    
+    # @classmethod
+    # def get_all_products(self):
+    #     query = """
+    #         SELECT id, name
+    #         FROM res_partner
+    #         WHERE active = TRUE
+    #         ORDER BY name
+    #     """
+        
+    #     cr = self.env.cr
+    #     cr.execute(query)
+    #     result = cr.fetchall()
+        
+    #     _logger.warning(f"@@@@@@@@@@@@@@@@@@@@@ LOGGER RW: resutl: {result} @@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    #     # return result
+    #     return "ELO"

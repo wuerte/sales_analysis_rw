@@ -38,8 +38,10 @@
     'website': '',
     'depends': ['base', 'sale'],
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/all_products_report.xml',
+        'security/ir.model.access.csv',
+        'wizards/all_products_wizard.xml',
+        'report/all_products_report.xml',
+        'views/menu.xml',
     ],
     'installable': True,
     'sequence': 1,
