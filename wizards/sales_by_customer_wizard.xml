@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="view_sales_by_customer_report" model="ir.ui.view">
+        <field name="name">sales.by.customer.report.wizard.form</field>
+        <field name="model">sales.by.customer.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Sales by customer report">
+                <group>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </group>
+                <footer>
+                    <button name="action_print_report" type="object" string="Create" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sales_by_customer_report" model="ir.actions.act_window">
+        <field name="name">Sales by customer report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sales.by.customer.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_sales_by_customer_report"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

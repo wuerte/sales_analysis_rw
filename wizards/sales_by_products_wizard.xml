@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <record id="view_all_products_report" model="ir.ui.view">
-        <field name="name">all.products.report.wizard.form</field>
-        <field name="model">all.products.report.wizard</field>
+    <record id="view_sales_by_products_report" model="ir.ui.view">
+        <field name="name">sales.by.products.report.wizard.form</field>
+        <field name="model">sales.by.products.report.wizard</field>
         <field name="arch" type="xml">
-            <form string="All Products report">
+            <form string="Sales by Products report">
                 <group>
                     <field name="date_from"/>
                     <field name="date_to"/>
@@ -17,12 +17,13 @@
             </form>
         </field>
     </record>
-    <record id="action_all_products_report" model="ir.actions.act_window">
-        <field name="name">All products report</field>
+
+    <record id="action_sales_by_products_report" model="ir.actions.act_window">
+        <field name="name">Sales by products report</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">all.products.report.wizard</field>
+        <field name="res_model">sales.by.products.report.wizard</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="view_all_products_report"/>
+        <field name="view_id" ref="view_sales_by_products_report"/>
         <field name="target">new</field>
     </record>
 

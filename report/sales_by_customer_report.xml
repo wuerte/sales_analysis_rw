@@ -2,13 +2,13 @@
 <odoo>
     <data>
 
-    <template id="all_products_report_view">
+    <template id="sales_by_customer_report_view">
         <t t-call="web.html_container">
             <!-- <t t-foreach="docs" t-as="o"> -->
                 <t t-call="web.external_layout">
                     <div class="page">
                         <h2 class='fs-4'>
-                        <span>All products report</span>
+                        <span>Sales by Customer products report</span>
                         </h2>
                         <br/>
                         <span>Date from: </span>
@@ -24,32 +24,27 @@
                                         <strong>#</strong>
                                     </td>
                                     <td class="col-xs-5">
-                                        <strong>Product</strong>
+                                        <strong>Customer</strong>
                                     </td>
                                     <td class="col-xs-4">
                                         <strong>Revenue</strong>
-                                    </td>
-                                    <td class="col-xs-2">
-                                        <strong>Quantity</strong>
                                     </td>
                                 </tr>
                             </thead>
                             <tbody class="invoice_tbody">
                                 <t t-set="position" t-value="1"/>
-                                <t t-if="products">
-                                    <t t-foreach="products" t-as="product">
+                                <t t-if="customers">
+                                    <t t-foreach="customers" t-as="customer">
                                     <tr style="page-break-inside: avoid !important;">
                                         <td>
                                             <t t-out="position"/>
                                         </td>
                                         <td>
-                                            <t t-esc="product[0]['en_US']"/>
+                                            <!-- <t t-esc="customer[0]['en_US']"/> -->
+                                            <t t-esc="customer[0]"/>
                                         </td>
                                         <td>
-                                            <t t-esc="product[1]"/>
-                                        </td>
-                                        <td>
-                                            <t t-esc="product[2]"/>
+                                            <t t-esc="customer[1]"/>
                                         </td>
                                         <t t-set="position" t-value="position + 1"/>
                                     </tr>
@@ -63,14 +58,14 @@
         </t>
     </template>   
 
-    <record id="action_all_products_report_print" model="ir.actions.report">
-        <field name="name">All porducts report</field>
-        <field name="model">all.products.report.wizard</field>
+    <record id="action_sales_by_customer_report_print" model="ir.actions.report">
+        <field name="name">Sales by customer report</field>
+        <field name="model">sales.by.customer.report.wizard</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">sales_analysis_rw.all_products_report_view</field>
-        <field name="report_file">sales_analysis_rw.all_products_report_view</field>
+        <field name="report_name">sales_analysis_rw.sales_by_customer_report_view</field>
+        <field name="report_file">sales_analysis_rw.sales_by_customer_report_view</field>
         <field name="attachment_use">False</field>
-        <field name="binding_model_id" ref="model_all_products_report_wizard"/>
+        <field name="binding_model_id" ref="model_sales_by_customer_report_wizard"/>
         <field name="binding_type">report</field>
     </record>
 

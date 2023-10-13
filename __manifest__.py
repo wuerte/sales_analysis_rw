@@ -28,19 +28,23 @@
     'summary': 'sales analysis and reports',
     'version': '16.0.1.0.00',
     'description': """
-        Analysis for Sales module, like ranking of Customers, ranking of Salespersons etc.
-        TO DO:
-            -REPORT: ranking/summary of all PRODUCTs, most revenue, most profit, most quantity, most margin,
-            -REPORT: of every PRODUCT: revenue in year, revenue, profit, quantity, margin, average discount
-            -REPORT of every SALESPERSON: 
+        Analysis for Sales module, functionalities:
+        -sales ranking by product
+        -sales ranking by product category
+        -sales ranking by salesman
+        -sales ranking by customer
+
+        
     """,
     'author': 'Radosław Wierzgała',
     'website': '',
     'depends': ['base', 'sale'],
     'data': [
         'security/ir.model.access.csv',
-        'wizards/all_products_wizard.xml',
-        'report/all_products_report.xml',
+        'wizards/sales_by_products_wizard.xml',
+        'wizards/sales_by_customer_wizard.xml',
+        'report/sales_by_products_report.xml',
+        'report/sales_by_customer_report.xml',
         'views/menu.xml',
     ],
     'installable': True,
