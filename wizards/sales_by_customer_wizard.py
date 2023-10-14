@@ -2,6 +2,7 @@
 
 from odoo import api, fields, models, _
 import logging
+from datetime import datetime
 
 _logger = logging.getLogger(__name__)
 
@@ -9,8 +10,8 @@ class SalesByCustomerReportWizard(models.TransientModel):
     _name = "sales.by.customer.report.wizard"
     _description = "Create Sales Ranking Wizard"
 
-    date_from = fields.Date(string="Date From")
-    date_to = fields.Date(string="Date To")
+    date_from = fields.Date(string="Date From", default=datetime.today())
+    date_to = fields.Date(string="Date To", default=datetime.today())
 
     def get_all_customer(self, date_from, date_to):
         #napisac mehcanizm zamiany date_to z date_from jeżeli są date_to < date_from

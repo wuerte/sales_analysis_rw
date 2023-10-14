@@ -23,22 +23,20 @@
 
 {
     'name': 'Sales Analysis RW',
-    'category': 'base',
+    'category': 'sales',
     "license": "AGPL-3",
     'summary': 'sales analysis and reports',
     'version': '16.0.1.0.00',
     'description': """
         Analysis for Sales module, functionalities:
         -sales ranking by product
-        -sales ranking by product category
-        -sales ranking by salesman
-        -sales ranking by customer
-
-        
+        -sales ranking by product category TODO
+        -sales ranking by salesman TODO
+        -sales ranking by customer        
     """,
     'author': 'Radosław Wierzgała',
     'website': '',
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale', 'account'],
     'data': [
         'security/ir.model.access.csv',
         'wizards/sales_by_products_wizard.xml',
