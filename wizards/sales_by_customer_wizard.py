@@ -24,21 +24,6 @@ class SalesByCustomerReportWizard(models.TransientModel):
         date_from = "'" + str(date_from) + "'"
         date_to = "'" + str(date_to) + "'"
 
-
-        # query = f"""
-        #     SELECT 
-        #         pt.name, 
-        #         SUM(aml.price_subtotal) as total_price_subtotal,
-        #         SUM(aml.quantity) as qty 
-        #     FROM account_move am
-        #     JOIN account_move_line aml ON am.id = aml.move_id
-        #     JOIN product_product pp ON aml.product_id = pp.id
-        #     JOIN product_template pt ON pp.product_tmpl_id = pt.id
-        #     WHERE am.move_type = 'out_invoice' AND am.state='posted' AND am.invoice_date >= {date_from} AND am.invoice_date <= {date_to}
-        #     GROUP BY pt.name
-        #     ORDER BY total_price_subtotal DESC;
-        # """
-
         query = f"""
             SELECT 
                 customer.name,

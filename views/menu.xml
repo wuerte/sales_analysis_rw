@@ -4,8 +4,9 @@
 
     <menuitem id="menu_sales_by_products_report" name="Sales by products report" parent="sale.menu_sale_report" action="action_sales_by_products_report" sequence="7"/>
 
-    <menuitem id="menu_sales_by_customer_report" name="Sales by customer report" parent="sale.menu_sale_report" action="action_sales_by_customer_report" sequence="7"/>
+    <menuitem id="menu_sales_by_customer_report" name="Sales by customer report" parent="sale.menu_sale_report" action="action_sales_by_customer_report" sequence="8"/>
 
+    <menuitem id="menu_sales_by_salesman_report" name="Sales by salesman report" parent="sale.menu_sale_report" action="action_sales_by_salesman_report" sequence="9"/>
 
     </data>
 </odoo>
