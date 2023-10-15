@@ -28,10 +28,8 @@
     'summary': 'sales analysis and reports',
     'version': '16.0.1.0.00',
     'description': """
-        Analysis for Sales module, functionalities:
-        -sales ranking by product
-        -sales ranking by product category TODO
-        -sales ranking by salesman TODO
+        Analysis for Sales module,
+        -sales ranking by salesman
         -sales ranking by customer        
     """,
     'author': 'Radosław Wierzgała',
