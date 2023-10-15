@@ -30,7 +30,9 @@
     'description': """
         Analysis for Sales module,
         -sales ranking by salesman
-        -sales ranking by customer        
+        -sales ranking by customer
+        -sales ranking by product
+            
     """,
     'author': 'Radosław Wierzgała',
     'website': '',
